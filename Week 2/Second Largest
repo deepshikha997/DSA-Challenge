@@ -1,0 +1,23 @@
+class Solution {
+    int print2largest(int arr[], int n) {
+        int largest1= Integer.MIN_VALUE;
+        int largest2= Integer.MIN_VALUE;
+        
+        for(int i=0; i<n; i++){
+            if(largest1 < arr[i] && largest2 < largest1){
+                largest2 = largest1;
+            }
+            else if(largest1 > arr[i] && largest2 < arr[i]){
+                largest2=arr[i];
+            }
+            if(largest1 < arr[i]){
+                largest1 = arr[i];
+            }
+        }
+        if(largest2 == Integer.MIN_VALUE){
+            return -1;
+        }
+        return largest2;
+        
+    }
+}
