@@ -1,0 +1,21 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class WorkAtTech
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc = new Scanner(System.in);
+        double rupees;
+        int r = sc.nextInt();
+        int h = sc.nextInt();
+		if(r!=0 && h!=0){
+			double v = 3.14*r*r*h;
+			rupees = 40 *(v/1000);
+		}else{
+			rupees= 0;
+		}
+        System.out.printf("%.2f",rupees);
+	}
+}
