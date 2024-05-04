@@ -1,0 +1,19 @@
+class Solution{
+    static long largestPrimeFactor(int N) {
+        int max=0;
+        while(N%2 == 0){
+            max = 2;
+            N = N/2;
+        }
+        for(int i = 3; i*i<=N; i++){
+            while(N%i == 0){
+                N = N/i;
+                max = i;
+            }
+        }
+        if(N > 2){
+            max = N;
+        }
+        return max;
+    }
+}
