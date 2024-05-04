@@ -1,0 +1,18 @@
+class Solution {
+    static Long[] lcmAndGcd(Long A , Long B) {
+        Long Gcd= findGCD(A,B);
+        Long Lcm = findLCM(A,B,Gcd);
+        Long[] lng ={Lcm,Gcd};
+        return lng;
+    }
+    static Long findGCD(Long A, Long B){
+        if(A==0){
+            return B;
+        }
+        return findGCD(B% A,A);
+    }
+    static Long findLCM(Long A,Long B,Long Gcd){
+        
+      return (A*B)/Gcd;
+    }
+}
