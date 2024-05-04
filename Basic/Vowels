@@ -1,0 +1,29 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class WorkAtTech
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		
+		for(int i=0; i<n; i++){
+			String name = sc.next().trim();
+			
+			int val = countVowels(name);
+			System.out.println(val);
+		}
+	}
+	static int countVowels(String name){
+		int count=0;
+		for(int i=0; i<name.length(); i++){
+			char ch=name.charAt(i);
+			if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' || ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U'){
+				count ++;
+			}
+		}
+		return count;
+	}
+}

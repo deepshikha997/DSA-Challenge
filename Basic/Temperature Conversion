@@ -1,0 +1,20 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class WorkAtTech
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc = new Scanner(System.in);
+		double Temp = sc.nextInt();
+		
+		double Fahrenheit;
+		for(int i=0; i<Temp; i++){
+			Float centigrade = sc.nextFloat();
+			Fahrenheit =(9* centigrade/5)+32;
+			System.out.format("%.2f",Fahrenheit);
+			System.out.println();
+		}
+	}
+}

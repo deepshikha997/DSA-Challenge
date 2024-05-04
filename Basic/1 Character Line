@@ -1,0 +1,14 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class WorkAtTech
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		String name = "WORKATTECH";
+		for(int i=0; i<name.length(); i++){
+			System.out.println(name.charAt(i));
+		}
+	}
+}

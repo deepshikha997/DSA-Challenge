@@ -1,0 +1,28 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class WorkAtTech
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc = new Scanner(System.in);
+		int length = sc.nextInt();
+		int arr[] = new int[length];
+		for(int i=0; i<length; i++){
+			arr[i]= sc.nextInt();
+		}
+		int max= arr[0];
+		for(int i=0; i<length; i++){
+			if(max<arr[i]){
+				max=arr[i];
+			}
+		}
+		if(max%2 == 0){
+			System.out.println("WON");
+		}else{
+			System.out.println("LOST");
+		}
+	}
+}
