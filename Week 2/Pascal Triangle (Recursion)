@@ -1,0 +1,28 @@
+class Solution {
+    ArrayList<Long> nthRowOfPascalTriangle(int n) {
+        ArrayList<Long> list = new ArrayList<>();
+        list.add(1L);
+        
+        // Base case: n==1 return [1]
+        if(n == 1){
+            return list;
+        }
+        
+        // Recursive call to generate the (n-1)th row of Pascal's Triangle
+        ArrayList<Long> prev = nthRowOfPascalTriangle(n-1);
+        
+        for(int i=1; i<(n+1)/2; i++){
+            
+             // Create a value to store the current row of Pascal's Triangle
+            long val =(prev.get(i-1)+ prev.get(i))% 1_000_000_007L;
+            list.add(val);
+        }
+        
+        // Generate the current row by summing consecutive elements from the (n-1)th row
+        for(int i= n/2-1;i>=0;i--){
+            list.add(list.get(i));// Add 1 at the end of the current row
+        }
+        
+        return list; //Return the current row of Pascal's Triangle
+    }
+}
