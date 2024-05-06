@@ -1,0 +1,31 @@
+class Solution
+{
+    void merge(int arr[], int l, int m, int r)
+    {
+        int res[]= new int[r-l+1];
+        int left=l;
+        int  mid=m+1;
+        int x=0;
+        while(left<=m && mid<=r){
+            
+            if(arr[left]<=arr[mid]){res[x++]=arr[left++];}
+            else{
+                res[x++]=arr[mid++];
+            }
+        }
+            while(left<=m)res[x++]=arr[left++];
+            while(mid<=r)res[x++]=arr[mid++];
+            for(int i=0,k=l;i<res.length;i++,k++){
+                arr[k]=res[i];
+            }
+        
+    }
+    void mergeSort(int arr[], int l, int r)
+    {
+        if(l>=r)return;
+        int m=l+(r-l)/2;
+        mergeSort(arr,l,m);
+        mergeSort(arr,m+1,r);
+        merge(arr,l,m,r);
+    }
+}
