@@ -1,0 +1,21 @@
+
+class Solution
+{ 
+    //Function to find if there is a celebrity in the party or not.
+    int celebrity(int M[][], int n)
+    {
+    	int s =0,e=n-1;
+    	while(s<e){
+    	    if(M[s][e]==0) e--;
+    	    else if(M[s][e]==1) s++;
+    	}
+    	for(int i=0;i<n;i++){
+    	    if(i!=s && M[i][s]!=1) return -1;
+    	}
+    	for(int j=0;j<n;j++){
+    	    if(M[s][j]!=0) return -1;
+    	}
+    	return s;
+    
+    }
+}
