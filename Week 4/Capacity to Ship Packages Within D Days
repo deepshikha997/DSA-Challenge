@@ -1,0 +1,33 @@
+class Solution {
+    public int shipWithinDays(int[] weights, int days) {
+        int n= weights.length;
+        int minWeight = Integer.MIN_VALUE; //if days==1  then max weight will be the capacity
+        int maxWeight =0; //if days=n then sum of all weights will be the capacity
+
+        for(int i=0; i<n; i++){
+            minWeight = Math.max(minWeight,weights[i]);
+            maxWeight+= weights[i];
+        }
+        while(minWeight<maxWeight){
+            int mid = (minWeight+maxWeight)/2;
+            int count = check(mid,weights,n,days);
+            if(count>days)
+            minWeight = mid+1;
+            else
+            maxWeight = mid;
+        }
+        return minWeight;
+    }
+    public int check(int capacity, int[] weights, int n, int days){
+        int count =1;
+        int sum=0;
+        for(int i=0; i<n; i++){
+            sum+= weights[i];
+            if(sum>capacity){
+                count++;
+                sum= weights[i];
+            }
+        }
+        return count;
+    }
+}
